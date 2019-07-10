@@ -1,22 +1,48 @@
 <?php
 require_once 'DiplomaPdf.php';
-//require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-//require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
+require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 
-/*$rut = $_GET['rut'];
-$query=mysqli_query($con,"SELECT * from diploma where rut = $rut");
+$rut = $_GET['rut'];
+$curso = $_GET['curso'];
+
+$query=mysqli_query($con,"SELECT * from diploma where rut = '$rut'");
 	while($row=mysqli_fetch_array($query)){
-			$nombre =$row['nombre'];
-			$nombre.= " ".$row['apellido1'];
-			$nombre.= " ".$row['apellido2'];
-			}*/
-$nombre = "Edwin Guasman Caceres";	
-$nombre_diploma = "curso de nuebvoas";
+			$nombre =trim($row['nombre']);
+			$nombre.= " ".trim($row['apellido1']);
+			$nombre.= " ".trim($row['apellido2']);
+			}
+
+
+if ($curso == 3829)
+{
+$nombrediploma1 = "Gestion de Activos Físicos";
+$nombrediploma2 = "Acorde a ISO 55000";
+
+$lugarfecha = "Santiago, 8 y 9 de julio de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "José Durán"; 
+$firmarelator = "Firma_Duran.png";
+}
+else if ($curso == 3797)
+{
+$nombrediploma1 = "Curso Legislación Laboral Actualizada:";
+$nombrediploma2 = "Relaciones Individuales del Trabajo";
+
+$lugarfecha = "Santiago, 9 y 10 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+} 	
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
-//$diplomaPdf->renderFirma('Firma_Liendo_0711.png',210,163,50);
-$diplomaPdf->renderFirma('Firma_Olga.png',220,150,20);
-$diplomaPdf->nombreCurso($nombre);
-$diplomaPdf->footer();
+$diplomaPdf->renderFirma($firmarelator,210,163,50);
+//$diplomaPdf->renderFirma($firmarelator,220,150,20);
+$diplomaPdf->nombreCurso($nombre,$nombrediploma1,$nombrediploma2,$lugarfecha,$horas);
+$diplomaPdf->footer2($nombrerelator);
 $diplomaPdf->Output();
 ?>
