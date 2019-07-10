@@ -59,6 +59,7 @@
                                         <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
                                     <input type="text" name="rut" class="form-control form-control-lg" placeholder="Ingrese Rut sin Puntos ni Guion" aria-label="rut" aria-describedby="basic-addon1" required>
+									<input type="hidden" name="curso" id="curso" value="<?php echo $_GET['curso']; ?>">
                                 </div>
                                 
                                 
