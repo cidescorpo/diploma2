@@ -48,7 +48,7 @@
                     <div class="logo">
                         <span class="db"><img src="assets/images/logos/logo-icon.png" alt="logo" /></span>
                         <h5 class="font-medium mb-3">Descargar Diploma</h5>
-						<p><?php echo display_msg($msg); ?></p>
+						<p><?php if ($_GET['error'] == 1) echo "<span style='color:red;'>Rut incorrecto o no existe</span>"; ?></p>
                     </div>
                     <!-- Form -->
                     <div class="row">
@@ -66,6 +66,9 @@
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 pb-3">
                                         <button class="btn btn-block btn-lg btn-info" type="submit">Descargar Diploma</button>
+                                    </div>
+									<div class="col-xs-12 pb-3">
+                                        <p>Dudas o problemas contáctate con CIDES <br>Fono: (+562)23730170  &nbsp;Email: contacto@cides.com</p>
                                     </div>
                                 </div>
                             </form>
