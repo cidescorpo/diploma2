@@ -55,6 +55,30 @@ $nombrerelator = "Johanna López-Durán";
 $firmarelator = "Firma_Johanna.png";
 
 }
+else if ($curso == 3781)
+{
+$nombrediploma1 = "Tribología: Ingeniería del";
+$nombrediploma2 = "Desgaste";
+
+$lugarfecha = "Santiago, 18 y 19 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Maurizio Edwards";
+$firmarelator = "Firma_Edwards.png";
+
+}
+else if ($curso == 3816)
+{
+$nombrediploma1 = "Atención/Servicio al Cliente y";
+$nombrediploma2 = "Comunicación";
+
+$lugarfecha = "Santiago, 18 y 19 de julio de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristián Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
