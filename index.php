@@ -79,6 +79,20 @@ $nombrerelator = "Cristián Ruiz";
 $firmarelator = "Firma_Ruiz.png";
 
 }
+
+else if ($curso == 3771)
+{
+$nombrediploma1 = "Técnicas Exitosas de Licitación y";
+$nombrediploma2 = "Selección del Mejor Contratista";
+
+$lugarfecha = "Santiago, 22 y 23 de julio de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Dan Church";
+$firmarelator = "Firma_DanChurch.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
