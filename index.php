@@ -92,6 +92,19 @@ $nombrerelator = "Dan Church";
 $firmarelator = "Firma_DanChurch.png";
 
 }
+else if ($curso == 3772)
+{
+$nombrediploma1 = "Administración y Ejecución de";
+$nombrediploma2 = "Contratos";
+
+$lugarfecha = "Santiago, 24 y 25 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Dan Church";
+$firmarelator = "Firma_DanChurch.png";
+
+}
+ 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
