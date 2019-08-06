@@ -104,6 +104,19 @@ $nombrerelator = "Dan Church";
 $firmarelator = "Firma_DanChurch.png";
 
 }
+else if ($curso == 3802)
+{
+$nombrediploma1 = "Aseguramiento y Control de la Calidad";
+$nombrediploma2 = "en la Exploración Geológica y Minera";
+
+$lugarfecha = "Santiago, 5 y 6 de agosto de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Armando Simón";
+$firmarelator = "Firma_ArmandoSimon.png";
+
+}
+
  
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
