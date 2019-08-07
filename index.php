@@ -117,6 +117,19 @@ $firmarelator = "Firma_ArmandoSimon.png";
 
 }
 
+else if ($curso == 3804)
+{
+$nombrediploma1 = "Indicadores Claves de Desempeño en Mantenimiento:";
+$nombrediploma2 = "Implementación y Monitoreo";
+
+$lugarfecha = "Santiago, 6 y 7 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna López-Durán";
+$firmarelator = "Firma_Johanna.png";
+
+}
+
  
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
