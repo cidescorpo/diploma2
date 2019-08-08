@@ -130,7 +130,19 @@ $firmarelator = "Firma_Johanna.png";
 
 }
 
- 
+else if ($curso ==  3880)
+{
+$nombrediploma1 = "Administración de Fallas de Alto";
+$nombrediploma2 = "Impacto";
+
+$lugarfecha = "Santiago, 6, 7 y 8 de agosto de 2019";
+
+$horas = "24 horas";
+$nombrerelator = "Miguel Libbrecht";
+$firmarelator = "Firma_Libbrecht.png";
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
