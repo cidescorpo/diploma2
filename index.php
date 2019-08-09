@@ -145,14 +145,38 @@ $firmarelator = "Firma_Libbrecht.png";
 
 else if ($curso ==  3855)
 {
-$nombrediploma1 = "Principios Básicos de Seguridad Eléctrica en Lugares";
-$nombrediploma2 = "de Trabajo: Aplicación de NFPA 70E";
+$nombrediploma1 = "Principios Básicos de Seguridad Eléctrica en";
+$nombrediploma2 = "Lugares de Trabajo: Aplicación de NFPA 70E";
 
-$lugarfecha = "Santiago, 6 y 7 de agosto de 2019";
+$lugarfecha = "Mejillones, 6 y 7 de agosto de 2019";
 
 $horas = "15 horas";
 $nombrerelator = "Juan Ramón Flores";
 $firmarelator = "Firma_Flores.png";
+
+}
+else if ($curso ==  3805)
+{
+$nombrediploma1 = "Análisis de Causa Raíz acorde";
+$nombrediploma2 = "a Normas Internacionales";
+
+$lugarfecha = "Santiago, 8 y 9 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna López-Durán";
+$firmarelator = "Firma_Johanna.png";
+
+}
+else if ($curso ==  3819)
+{
+$nombrediploma1 = "Nueva Ley sobre el Contrato de";
+$nombrediploma2 = "Trabajo por Obra o Faena";
+
+$lugarfecha = "Santiago, 9 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
 
 }
 
