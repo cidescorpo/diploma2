@@ -132,14 +132,27 @@ $firmarelator = "Firma_Johanna.png";
 
 else if ($curso ==  3880)
 {
-$nombrediploma1 = "Administración de Fallas de Alto";
-$nombrediploma2 = "Impacto";
+$nombrediploma1 = "Administración de Fallas";
+$nombrediploma2 = "de Alto Impacto";
 
 $lugarfecha = "Santiago, 6, 7 y 8 de agosto de 2019";
 
 $horas = "24 horas";
 $nombrerelator = "Miguel Libbrecht";
 $firmarelator = "Firma_Libbrecht.png";
+
+}
+
+else if ($curso ==  3855)
+{
+$nombrediploma1 = "Principios Básicos de Seguridad Eléctrica en Lugares";
+$nombrediploma2 = "de Trabajo: Aplicación de NFPA 70E";
+
+$lugarfecha = "Santiago, 6 y 7 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
 
 }
 
