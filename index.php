@@ -179,6 +179,18 @@ $nombrerelator = "Ricardo Liendo";
 $firmarelator = "Firma_Liendo_0711.png";
 
 }
+else if ($curso ==  3807)
+{
+$nombrediploma1 = "Aspectos Prácticos Relevantes del Trabajo";
+$nombrediploma2 = "en Régimen de Subcontratación";
+
+$lugarfecha = "Santiago, 13 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
