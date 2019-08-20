@@ -191,6 +191,18 @@ $nombrerelator = "Ricardo Liendo";
 $firmarelator = "Firma_Liendo_0711.png";
 
 }
+else if ($curso ==  3758)
+{
+$nombrediploma1 = "Administración de Bodegas y Codificación";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 19 y 20 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Jaime Salom";
+$firmarelator = "Firma_Salom.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
