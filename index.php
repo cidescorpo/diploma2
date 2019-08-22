@@ -217,6 +217,18 @@ $firmarelator = "Firma_Flores.png";
 
 }
 
+else if ($curso ==  3857)
+{
+$nombrediploma1 = "Fraudes Corporativos:";
+$nombrediploma2 = "Naturaleza, Prevención y Detección";
+
+$lugarfecha = "Santiago, 22 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Christian Nino-Moris";
+$firmarelator = "Firma_Nino-Moris.png";
+
+}
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
