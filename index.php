@@ -229,6 +229,19 @@ $nombrerelator = "Christian Nino-Moris";
 $firmarelator = "Firma_Nino-Moris.png";
 
 }
+else if ($curso ==  3891)
+{
+$nombrediploma1 = "Manejo de Crisis: Psicología de la Emergencia";
+$nombrediploma2 = "Aplicada a Contingencias en la Empresa";
+
+$lugarfecha = "Santiago, 27 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristian Araya";
+$firmarelator = "Firma_Araya.png";
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
