@@ -241,6 +241,18 @@ $nombrerelator = "Cristian Araya";
 $firmarelator = "Firma_Araya.png";
 
 }
+else if ($curso ==  3890)
+{
+$nombrediploma1 = "Sistemas de Mantención y Protección Contra";
+$nombrediploma2 = "Incendio: Aplicación de la Norma NFPA 25";
+
+$lugarfecha = "Antofagasta, 27 Y 28 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
