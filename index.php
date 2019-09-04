@@ -254,6 +254,19 @@ $firmarelator = "Firma_Flores.png";
 
 }
 
+else if ($curso ==  3836)
+{
+$nombrediploma1 = "Prácticas Efectivas de Planificación y";
+$nombrediploma2 = "Control de Parada de Planta";
+
+$lugarfecha = "Santiago, 3 y 4 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Miguel Libbrecht";
+$firmarelator = "Firma_Libbrecht.png";
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
