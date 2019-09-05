@@ -267,6 +267,19 @@ $firmarelator = "Firma_Libbrecht.png";
 
 }
 
+else if ($curso ==  3871)
+{
+$nombrediploma1 = "Gestión Estratégica de las Compensaciones";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 5 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Rodrigo Ianiszewski";
+$firmarelator = "Firma_Libbrecht.png";
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
