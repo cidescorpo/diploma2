@@ -276,7 +276,7 @@ $lugarfecha = "Santiago, 5 de septiembre de 2019";
 
 $horas = "8 horas";
 $nombrerelator = "Rodrigo Ianiszewski";
-$firmarelator = "Firma_Libbrecht.png";
+$firmarelator = "Firma_Ianiszewski.png";
 
 }
 
