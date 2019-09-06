@@ -280,6 +280,18 @@ $firmarelator = "Firma_Ianiszewski.png";
 
 }
 
+else if ($curso ==  3845)
+{
+$nombrediploma1 = "Contratación de Extranjeros en Chile";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 6 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
