@@ -293,6 +293,19 @@ $firmarelator = "Firma_Liendo_0711.png";
 
 }
 
+else if ($curso ==  3859)
+{
+$nombrediploma1 = "Reforma Laboral: Sindicatos y Negociación Colectiva";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 10 y 11 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
