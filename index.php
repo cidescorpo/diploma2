@@ -295,8 +295,8 @@ $firmarelator = "Firma_Liendo_0711.png";
 
 else if ($curso ==  3859)
 {
-$nombrediploma1 = "Reforma Laboral: Sindicatos y Negociación Colectiva";
-$nombrediploma2 = "";
+$nombrediploma1 = "Reforma Laboral:";
+$nombrediploma2 = "Sindicatos y Negociación Colectiva";
 
 $lugarfecha = "Santiago, 10 y 11 de septiembre de 2019";
 
