@@ -306,6 +306,19 @@ $firmarelator = "Firma_Liendo_0711.png";
 
 }
 
+else if ($curso ==  3848)
+{
+$nombrediploma1 = "Sistemas de Protección Contra Incendio:";
+$nombrediploma2 = "Aplicación de Normas NFPA 72, 13, 20 y 25";
+
+$lugarfecha = "Santiago, 24 y 25 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
