@@ -319,6 +319,19 @@ $firmarelator = "Firma_Flores.png";
 
 }
 
+else if ($curso ==  3861)
+{
+$nombrediploma1 = "Técnicas para la Administración";
+$nombrediploma2 = "Eficiente del Tiempo";
+
+$lugarfecha = "Santiago, 27 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Sergio Celis";
+$firmarelator = "Firma_Celis.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
