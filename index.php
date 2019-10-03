@@ -332,6 +332,19 @@ $firmarelator = "Firma_Celis.png";
 
 }
 
+else if ($curso ==  3882)
+{
+$nombrediploma1 = "Comunicación Efectiva Utilizando";
+$nombrediploma2 = "Técnicas de la PNL";
+
+$lugarfecha = "Santiago, 3 de octubre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Amancio Ojeda";
+$firmarelator = "Firma_Amancio.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
