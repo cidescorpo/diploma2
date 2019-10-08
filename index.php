@@ -345,6 +345,19 @@ $firmarelator = "Firma_Amancio.png";
 
 }
 
+else if ($curso ==  3906)
+{
+$nombrediploma1 = "Operación y Mantenimiento Turbina de Gas";
+$nombrediploma2 = "GE 9FA y Vapor GE D11";
+
+$lugarfecha = "Santiago, 7 y 8 de octubre de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Mauricio Vega";
+$firmarelator = "Firma_Vega.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
