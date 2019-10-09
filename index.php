@@ -358,6 +358,32 @@ $firmarelator = "Firma_Vega.png";
 
 }
 
+else if ($curso ==  3908)
+{
+$nombrediploma1 = "Principios Básicos de Seguridad Eléctrica en";
+$nombrediploma2 = "Lugares de Trabajo: Aplicación de NFPA 70E";
+
+$lugarfecha = "Santiago, 8 y 9 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
+else if ($curso ==  3850)
+{
+$nombrediploma1 = "Preparación y Evaluación de Proyectos";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 8 y 9 de octubre de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Reinaldo Sapag";
+$firmarelator = "Firma_Sapag.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
