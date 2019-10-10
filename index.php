@@ -386,7 +386,7 @@ $firmarelator = "Firma_Sapag.png";
 else if ($curso ==  3907)
 {
 $nombrediploma1 = "Operación y Mantenimiento Turbina de Gas";
-$nombrediploma2 = "Lugares de Trabajo: Aplicación de NFPA 70E";
+$nombrediploma2 = "GE 9FA y Vapor GE D11";
 
 $lugarfecha = "Santiago, 9 y 10 de octubre de 2019";
 
