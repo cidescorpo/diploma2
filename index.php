@@ -395,6 +395,18 @@ $nombrerelator = "Mauricio Vega";
 $firmarelator = "Firma_Vega.png";;
 
 }
+else if ($curso ==  3911)
+{
+$nombrediploma1 = "Planificación y Programación";
+$nombrediploma2 = "del Mantenimiento";
+
+$lugarfecha = "Copiapó, 14 y 15 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna López-Durán";
+$firmarelator = "Firma_Johanna.png";;
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
