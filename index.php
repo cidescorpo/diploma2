@@ -408,6 +408,19 @@ $firmarelator = "Firma_Johanna.png";;
 
 }
 
+else if ($curso ==  3863)
+{
+$nombrediploma1 = "Legislación Laboral Actualizada:";
+$nombrediploma2 = "Relaciones Individuales del Trabajo";
+
+$lugarfecha = "Santiago, 24 y 25 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";;
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
