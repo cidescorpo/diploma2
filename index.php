@@ -421,6 +421,19 @@ $firmarelator = "Firma_Liendo_0711.png";;
 
 }
 
+else if ($curso == 3895)
+{
+$nombrediploma1 = "Atención/Servicio al Cliente y";
+$nombrediploma2 = "Comunicación";
+
+$lugarfecha = "Santiago, 7 de noviembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristián Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
+
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
