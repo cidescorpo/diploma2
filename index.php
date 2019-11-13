@@ -3,11 +3,11 @@ require_once 'DiplomaPdf.php';
 require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 
-$rut = $_GET['rut'];
+$rut = strtolower($_GET['rut']);
 $curso = $_GET['curso'];
 
 $nombre = "";
-$query=mysqli_query($con,"SELECT * from diploma where rut = '$rut'");
+$query=mysqli_query($con,"SELECT * from diploma where LOWER(rut) = '$rut'");
 	while($row=mysqli_fetch_array($query)){
 			$nombre =trim($row['nombre']);
 			$nombre.= " ".trim($row['apellido1']);
@@ -433,6 +433,33 @@ $nombrerelator = "Cristián Ruiz";
 $firmarelator = "Firma_Ruiz.png";
 
 }
+else if ($curso == 3925)
+{
+$nombrediploma1 = "Presentaciones de Alto Impacto";
+$nombrediploma2 = "(con Acento Pitch)";
+
+$lugarfecha = "Santiago, 12 y 13 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Cristián Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
+
+else if ($curso == 3927)
+{
+$nombrediploma1 = "Medición, Instrumentación y";
+$nombrediploma2 = "Control en la Industria del Gas";
+
+$lugarfecha = "Punta Arenas, 12 y 13 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Daniel  Brudnick";
+$firmarelator = "Firma_Brudnick.png";
+
+}
+
+
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
