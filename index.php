@@ -459,6 +459,18 @@ $firmarelator = "Firma_Brudnick.png";
 
 }
 
+else if ($curso == 3914)
+{
+$nombrediploma1 = "Cálculo de las Remuneraciones";
+$nombrediploma2 = "";
+
+$lugarfecha = "Antofagasta, 14 de noviembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+} 	
 
 
 
