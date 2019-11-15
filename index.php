@@ -1,179 +1,497 @@
 <?php
-  ob_start();
-  require_once('includes/load.php');
-  if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
+require_once 'DiplomaPdf.php';
+require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
+
+$rut = strtolower($_GET['rut']);
+$curso = $_GET['curso'];
+
+$nombre = "";
+$query=mysqli_query($con,"SELECT * from diploma where LOWER(rut) = '$rut'");
+	while($row=mysqli_fetch_array($query)){
+			$nombre =trim($row['nombre']);
+			$nombre.= " ".trim($row['apellido1']);
+			$nombre.= " ".trim($row['apellido2']);
+			}
+
+if(empty($nombre))
+{   $link = 
+	header("Location: ../diplomas.php?error=1&curso=".$curso );
+}
+
+if ($curso == 3829)
+{
+$nombrediploma1 = "Gestion de Activos FÌsicos";
+$nombrediploma2 = "Acorde a ISO 55000";
+
+$lugarfecha = "Santiago, 8 y 9 de julio de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "JosÈ Dur·n"; 
+$firmarelator = "Firma_Duran.png";
+}
+else if ($curso == 3797)
+{
+$nombrediploma1 = "LegislaciÛn Laboral Actualizada:";
+$nombrediploma2 = "Relaciones Individuales del Trabajo";
+
+$lugarfecha = "Santiago, 9 y 10 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+} 	
+
+else if ($curso == 3780)
+{
+$nombrediploma1 = "PlanificaciÛn y ProgramaciÛn";
+$nombrediploma2 = "del Mantenimiento";
+
+$lugarfecha = "Santiago, 10 y 11 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna LÛpez-Dur·n";
+$firmarelator = "Firma_Johanna.png";
+
+}
+else if ($curso == 3781)
+{
+$nombrediploma1 = "TribologÌa: IngenierÌa del";
+$nombrediploma2 = "Desgaste";
+
+$lugarfecha = "Santiago, 18 y 19 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Maurizio Edwards";
+$firmarelator = "Firma_Edwards.png";
+
+}
+else if ($curso == 3816)
+{
+$nombrediploma1 = "AtenciÛn/Servicio al Cliente y";
+$nombrediploma2 = "ComunicaciÛn";
+
+$lugarfecha = "Santiago, 18 y 19 de julio de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristi·n Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
+
+else if ($curso == 3771)
+{
+$nombrediploma1 = "TÈcnicas Exitosas de LicitaciÛn y";
+$nombrediploma2 = "SelecciÛn del Mejor Contratista";
+
+$lugarfecha = "Santiago, 22 y 23 de julio de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Dan Church";
+$firmarelator = "Firma_DanChurch.png";
+
+}
+else if ($curso == 3772)
+{
+$nombrediploma1 = "AdministraciÛn y EjecuciÛn de";
+$nombrediploma2 = "Contratos";
+
+$lugarfecha = "Santiago, 24 y 25 de julio de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Dan Church";
+$firmarelator = "Firma_DanChurch.png";
+
+}
+else if ($curso == 3802)
+{
+$nombrediploma1 = "Aseguramiento y Control de la Calidad";
+$nombrediploma2 = "en la ExploraciÛn GeolÛgica y Minera";
+
+$lugarfecha = "Santiago, 5 y 6 de agosto de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Armando SimÛn";
+$firmarelator = "Firma_ArmandoSimon.png";
+
+}
+
+else if ($curso == 3804)
+{
+$nombrediploma1 = "Indicadores Claves de DesempeÒo en Mantenimiento:";
+$nombrediploma2 = "ImplementaciÛn y Monitoreo";
+
+$lugarfecha = "Santiago, 6 y 7 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna LÛpez-Dur·n";
+$firmarelator = "Firma_Johanna.png";
+
+}
+
+else if ($curso ==  3880)
+{
+$nombrediploma1 = "AdministraciÛn de Fallas";
+$nombrediploma2 = "de Alto Impacto";
+
+$lugarfecha = "Santiago, 6, 7 y 8 de agosto de 2019";
+
+$horas = "24 horas";
+$nombrerelator = "Miguel Libbrecht";
+$firmarelator = "Firma_Libbrecht.png";
+
+}
+
+else if ($curso ==  3855)
+{
+$nombrediploma1 = "Principios B·sicos de Seguridad ElÈctrica en";
+$nombrediploma2 = "Lugares de Trabajo: AplicaciÛn de NFPA 70E";
+
+$lugarfecha = "Mejillones, 6 y 7 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan RamÛn Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+else if ($curso ==  3805)
+{
+$nombrediploma1 = "An·lisis de Causa RaÌz acorde";
+$nombrediploma2 = "a Normas Internacionales";
+
+$lugarfecha = "Santiago, 8 y 9 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna LÛpez-Dur·n";
+$firmarelator = "Firma_Johanna.png";
+
+}
+else if ($curso ==  3819)
+{
+$nombrediploma1 = "Nueva Ley sobre el Contrato de";
+$nombrediploma2 = "Trabajo por Obra o Faena";
+
+$lugarfecha = "Santiago, 9 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+else if ($curso ==  3807)
+{
+$nombrediploma1 = "Aspectos Pr·cticos Relevantes del Trabajo";
+$nombrediploma2 = "en RÈgimen de SubcontrataciÛn";
+
+$lugarfecha = "Santiago, 13 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+else if ($curso ==  3758)
+{
+$nombrediploma1 = "AdministraciÛn de Bodegas y CodificaciÛn";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 19 y 20 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Jaime Salom";
+$firmarelator = "Firma_Salom.png";
+
+}
+
+else if ($curso ==  3889)
+{
+$nombrediploma1 = "Sistemas de MantenciÛn y ProtecciÛn Contra";
+$nombrediploma2 = " Incendio: AplicaciÛn de la Norma NFPA 25";
+
+$lugarfecha = "Santiago, 20 y 21 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan RamÛn Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
+else if ($curso ==  3857)
+{
+$nombrediploma1 = "Fraudes Corporativos:";
+$nombrediploma2 = "Naturaleza, PrevenciÛn y DetecciÛn";
+
+$lugarfecha = "Santiago, 22 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Christian Nino-Moris";
+$firmarelator = "Firma_Nino-Moris.png";
+
+}
+else if ($curso ==  3891)
+{
+$nombrediploma1 = "Manejo de Crisis: PsicologÌa de la Emergencia";
+$nombrediploma2 = "Aplicada a Contingencias en la Empresa";
+
+$lugarfecha = "Santiago, 27 de agosto de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristian Araya";
+$firmarelator = "Firma_Araya.png";
+
+}
+else if ($curso ==  3890)
+{
+$nombrediploma1 = "Sistemas de MantenciÛn y ProtecciÛn Contra";
+$nombrediploma2 = "Incendio: AplicaciÛn de la Norma NFPA 25";
+
+$lugarfecha = "Antofagasta, 27 Y 28 de agosto de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan RamÛn Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
+else if ($curso ==  3836)
+{
+$nombrediploma1 = "Pr·cticas Efectivas de PlanificaciÛn y";
+$nombrediploma2 = "Control de Parada de Planta";
+
+$lugarfecha = "Santiago, 3 y 4 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Miguel Libbrecht";
+$firmarelator = "Firma_Libbrecht.png";
+
+}
+
+else if ($curso ==  3871)
+{
+$nombrediploma1 = "GestiÛn EstratÈgica de las Compensaciones";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 5 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Rodrigo Ianiszewski";
+$firmarelator = "Firma_Ianiszewski.png";
+
+}
+
+else if ($curso ==  3845)
+{
+$nombrediploma1 = "ContrataciÛn de Extranjeros en Chile";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 6 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+
+else if ($curso ==  3859)
+{
+$nombrediploma1 = "Reforma Laboral:";
+$nombrediploma2 = "Sindicatos y NegociaciÛn Colectiva";
+
+$lugarfecha = "Santiago, 10 y 11 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+
+else if ($curso ==  3848)
+{
+$nombrediploma1 = "Sistemas de ProtecciÛn Contra Incendio:";
+$nombrediploma2 = "AplicaciÛn de Normas NFPA 72, 13, 20 y 25";
+
+$lugarfecha = "Santiago, 24 y 25 de septiembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan RamÛn Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
+else if ($curso ==  3861)
+{
+$nombrediploma1 = "TÈcnicas para la AdministraciÛn";
+$nombrediploma2 = "Eficiente del Tiempo";
+
+$lugarfecha = "Santiago, 27 de septiembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Sergio Celis";
+$firmarelator = "Firma_Celis.png";
+
+}
+
+else if ($curso ==  3882)
+{
+$nombrediploma1 = "ComunicaciÛn Efectiva Utilizando";
+$nombrediploma2 = "TÈcnicas de la PNL";
+
+$lugarfecha = "Santiago, 3 de octubre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Amancio Ojeda";
+$firmarelator = "Firma_Amancio.png";
+
+}
+
+else if ($curso ==  3906)
+{
+$nombrediploma1 = "OperaciÛn y Mantenimiento Turbina de Gas";
+$nombrediploma2 = "GE 9FA y Vapor GE D11";
+
+$lugarfecha = "Santiago, 7 y 8 de octubre de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Mauricio Vega";
+$firmarelator = "Firma_Vega.png";
+
+}
+
+else if ($curso ==  3908)
+{
+$nombrediploma1 = "Principios B·sicos de Seguridad ElÈctrica en";
+$nombrediploma2 = "Lugares de Trabajo: AplicaciÛn de NFPA 70E";
+
+$lugarfecha = "Santiago, 8 y 9 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan RamÛn Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
+else if ($curso ==  3850)
+{
+$nombrediploma1 = "PreparaciÛn y EvaluaciÛn de Proyectos";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 8 y 9 de octubre de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Reinaldo Sapag";
+$firmarelator = "Firma_Sapag.png";
+
+}
+else if ($curso ==  3907)
+{
+$nombrediploma1 = "OperaciÛn y Mantenimiento Turbina de Gas";
+$nombrediploma2 = "GE 9FA y Vapor GE D11";
+
+$lugarfecha = "Santiago, 9 y 10 de octubre de 2019";
+
+$horas = "16 horas";
+$nombrerelator = "Mauricio Vega";
+$firmarelator = "Firma_Vega.png";;
+
+}
+else if ($curso ==  3911)
+{
+$nombrediploma1 = "PlanificaciÛn y ProgramaciÛn";
+$nombrediploma2 = "del Mantenimiento";
+
+$lugarfecha = "CopiapÛ, 14 y 15 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna LÛpez-Dur·n";
+$firmarelator = "Firma_Johanna.png";;
+
+}
+
+else if ($curso ==  3863)
+{
+$nombrediploma1 = "LegislaciÛn Laboral Actualizada:";
+$nombrediploma2 = "Relaciones Individuales del Trabajo";
+
+$lugarfecha = "Santiago, 24 y 25 de octubre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";;
+
+}
+
+else if ($curso == 3895)
+{
+$nombrediploma1 = "AtenciÛn/Servicio al Cliente y";
+$nombrediploma2 = "ComunicaciÛn";
+
+$lugarfecha = "Santiago, 7 de noviembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Cristi·n Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
+else if ($curso == 3925)
+{
+$nombrediploma1 = "Presentaciones de Alto Impacto";
+$nombrediploma2 = "(con Acento Pitch)";
+
+$lugarfecha = "Santiago, 12 y 13 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Cristi·n Ruiz";
+$firmarelator = "Firma_Ruiz.png";
+
+}
+
+else if ($curso == 3927)
+{
+$nombrediploma1 = "MediciÛn, InstrumentaciÛn y";
+$nombrediploma2 = "Control en la Industria del Gas";
+
+$lugarfecha = "Punta Arenas, 12 y 13 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Daniel  Brudnick";
+$firmarelator = "Firma_Brudnick.png";
+
+}
+
+else if ($curso == 3914)
+{
+$nombrediploma1 = "C·lculo de las Remuneraciones";
+$nombrediploma2 = "";
+
+$lugarfecha = "Antofagasta, 14 de noviembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+
+else if ($curso == 3876)
+{
+$nombrediploma1 = "NegociaciÛn EstratÈgica en AcciÛn";
+$nombrediploma2 = "Basado en el MÈtodo de Harvard";
+
+$lugarfecha = "Santiago, 14 y 15 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Olga Castillejo";
+$firmarelator = "Firma_Olga.png";
+
+} 	 	
+
+
+
+$diplomaPdf = new DiplomaPdf('L','mm','letter');
+$diplomaPdf->SetAutoPageBreak(false);
+$diplomaPdf->renderFirma($firmarelator,210,163,50);
+//$diplomaPdf->renderFirma($firmarelator,220,150,20);
+$diplomaPdf->nombreCurso($nombre,$nombrediploma1,$nombrediploma2,$lugarfecha,$horas);
+$diplomaPdf->footer2($nombrerelator);
+$diplomaPdf->Output();
 ?>
-<!DOCTYPE html>
-<html dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<style type="text/css">
-	.rut-error{
-		color: #fff;
-		font-weight: bold;
-		background-color: red;
-		padding: 3px 10px;
-		display: inline-block;
-		margin-left: 10px;
-	}
-	</style>
-</head>
-
-<body>
-    <div class="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="lds-ripple">
-                <div class="lds-pos"></div>
-                <div class="lds-pos"></div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(assets/images/big/auth-bg.jpg) no-repeat center center;">
-            <div class="auth-box">
-                <div id="loginform">
-                    <div class="logo">
-                        <span class="db"><img src="assets/images/logos/logo-icon.png" alt="logo" /></span>
-                       <p> <h3 class="font-medium mb-3">Ingresa a tu Plataforma de Cursos</h3></p>
-						<p><?php echo display_msg($msg); ?></p>
-                    </div>
-                    <!-- Form -->
-                    <div class="row">
-                        <div class="col-12">
-                            <form class="form-horizontal mt-3" id="loginform" action="auth.php" method="post">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>                                    </div>
-                                    <input type="text" name="username" id="username" class="form-control form-control-lg input_rut" placeholder="Rut" aria-label="Username" aria-describedby="basic-addon1" maxlength="12">
-									<div class="rut-container"></div>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>                                    </div>
-                                    <input type="password" name="password" class="form-control form-control-lg" placeholder="Contrase√±a" aria-label="Password" aria-describedby="basic-addon1"  size="12">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <div class="custom-control custom-checkbox">
-                                            
-                                            
-                                           <!-- <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock mr-1"></i> Olvidaste tu pwd?</a>      -->                                  </div>
-                                    </div>
-                                </div>
-                                <div class="form-group text-center">
-                                    <div class="col-xs-12 pb-3">
-                                        <button class="btn btn-block btn-lg btn-info" type="submit">Ingresar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                
-				
-				<div id="recoverform">
-                    <div class="logo">
-                        <span class="db"><img src="assets/images/logos/logo-icon.png" alt="logo" /></span>
-                        <h5 class="font-medium mb-3">Recuperar Contrase√±a</h5>
-                        <span>¬°Ingrese su correo electr√≥nico y le enviaremos las instrucciones!</span>                    </div>
-                    <div class="row mt-3">
-                        <!-- Form -->
-                        <form class="col-12" action="send-email-reset.php" method="post">
-                            <!-- email -->
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <input class="form-control form-control-lg" type="email" name="email" required="" placeholder="Ingresa tu Email">
-                                </div>
-                            </div>
-							<div class="form-group row">
-                                    <div class="col-md-12">
-                                        <div class="custom-control custom-checkbox">
-                                            
-                                            
-                                            <a href="javascript:void(0)" id="to-login" class="text-dark float-right"> Volver al login</a>                                        </div>
-                                    </div>
-                                </div>
-					 
-                            <!-- pwd -->
-                            <div class="row mt-3">
-                                <div class="col-12">
-                                    <button class="btn btn-block btn-lg btn-danger" type="submit" name="action">Cambiar Contrase√±a</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-	<script src="js/jquery.rut.chileno.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
-    <script>
-    $('[data-toggle="tooltip"]').tooltip();
-    $(".preloader").fadeOut();
-    // ============================================================== 
-    // Login and Recover Password 
-    // ============================================================== 
-    $('#to-recover').on("click", function() {
-        $("#loginform").slideUp();
-        $("#recoverform").fadeIn();
-    });
-	
-	 $('#to-login').on("click", function() {
-        $("#recoverform").slideUp();
-        $("#loginform").fadeIn();
-    });
-	
-	$('.input_rut').rut();
-
-    </script>
-</body>
-</html>
