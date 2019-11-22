@@ -483,7 +483,20 @@ $horas = "15 horas";
 $nombrerelator = "Olga Castillejo";
 $firmarelator = "Firma_Olga.png";
 
-} 	 	
+}
+
+else if ($curso == 3840)
+{
+$nombrediploma1 = "Análisis de Modos y Efectos de Falla y Criticidad (FMECA)";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 21 y 22 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Johanna López-Durán";
+$firmarelator = "Firma_Johanna.png";
+
+} 	 	 	
 
 
 
