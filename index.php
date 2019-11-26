@@ -497,7 +497,18 @@ $nombrerelator = "Johanna López-Durán";
 $firmarelator = "Firma_Johanna.png";
 
 } 	 	 	
+else if ($curso ==  3904)
+{
+$nombrediploma1 = "Contratación de Extranjeros en Chile";
+$nombrediploma2 = "";
 
+$lugarfecha = "Santiago, 26 de noviembre de 2019";
+
+$horas = "8 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
