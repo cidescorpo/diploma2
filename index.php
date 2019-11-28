@@ -509,6 +509,18 @@ $nombrerelator = "Ricardo Liendo";
 $firmarelator = "Firma_Liendo_0711.png";
 
 }
+else if ($curso ==  3935)
+{
+$nombrediploma1 = "Ingeniería de Costos Aplicada a";
+$nombrediploma2 = "La Contratación de Obras y Servicios";
+
+$lugarfecha = "Santiago, 27 y 28 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Carlos Parra";
+$firmarelator = "Firma_Parra2.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
