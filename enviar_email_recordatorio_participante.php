@@ -9,20 +9,12 @@ $inscripciones = find_by_sql("SELECT p.id,nombres,apellidos, email, cargo, telef
   $cantidad_inscritos = count($inscripciones);
  
   $curso = find_by_sql("SELECT * FROM confirmados c left join  material_curso m on(c.id_seminario = id_curso ) where id_seminario = $id_curso");
- if(!empty($curso['material']))
- {
- 	$tienematerial = 1;
- }
- else { $tienematerial = 1; }
+
 
 require 'vendor/autoload.php';
-
-// Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-
-    //Server settings
-   // $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.sendgrid.net';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -33,15 +25,19 @@ $mail = new PHPMailer(true);
 	
     $mail->setFrom('info@cidescorpo.cl', 'Cides');
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Prueba Activa tu participación en el Curso: '.$curso[0]['DESSEM'];
-	$body = file_get_contents('layoutemails/plantilla_email1.html');
+    $mail->Subject = 'Mañana empieza tu Curso: '.$curso[0]['DESSEM'];
+	$body = file_get_contents('layoutemails/recordatorioparticipante.html');
 	
+	 $horarios = $curso[0]['HORARI']."<br>";
+	 $horarios .= $curso[0]['HORARI2']."<br>"; 
+	 $horarios .= $curso[0]['HORARI3'];
     
    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $body = str_replace("[NOMBREDELCURSO]", $curso[0]['DESSEM'], $body);
-	$body = str_replace("[CIUDAD]", $curso[0]['CIUDAD'], $body);
-	$body = str_replace("[NOMBREHOTEL]", $curso[0]['LLUGAR'], $body);
-	$body = str_replace("[FECHACOMPLETA]", $curso[0]['fec_pal'], $body);
+	$body = str_replace("[DIRECCION]", $curso[0]['Direccion'], $body);
+	$body = str_replace("[HOTEL]", $curso[0]['NombreProveedor'], $body);
+	$body = str_replace("[ESTACIONAMIENTO]", $curso[0]['inf_adic'], $body);
+	$body = str_replace("[HORARIOS]", $horarios , $body);
 	
 	foreach($inscripciones as $inscripcion)
 	{
@@ -49,19 +45,10 @@ $mail = new PHPMailer(true);
 	$bodyaux = str_replace("[NOMBRE]", $inscripcion['nombres'], $body);
 	$bodyaux = str_replace("[USER]", rut($inscripcion['rut']), $bodyaux);
 	$bodyaux = str_replace("[CLAVE]", $inscripcion['rut'], $bodyaux);
-	$nombreresponsable =  $inscripcion['nombres']." ".$inscripcion['apellidos'];	
+	 $nombreresponsable =  $inscripcion['nombres']." ".$inscripcion['apellidos'];	
 	
-	 $rut = $inscripcion['rut'];
-	  $query  = "update matriculas set 	envio_email_1 = 1 , incluye_material = $tienematerial where rut =  $rut";
-     if(!$db->query($query)){
-
-       $session->msg('d',' Lo siento, registro falló.');
-       redirect('matricular.php?id='.$id_curso , false);
-	   
-     } 
-	 
-	  $mail->addAddress('hsolarster@gmail.com',$nombreresponsable);
 	  //$mail->addAddress($inscripcion['email'],$nombreresponsable);
+	  $mail->addAddress('hsolarster@gmail.com',$nombreresponsable);
 	  $mail->Body    = $bodyaux;
       $mail->send();
 	  $mail->ClearAddresses();
