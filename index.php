@@ -521,6 +521,18 @@ $nombrerelator = "Carlos Parra";
 $firmarelator = "Firma_Parra2.png";
 
 }
+else if ($curso ==  3929)
+{
+$nombrediploma1 = "Sistemas de Protección Contra Incendio:";
+$nombrediploma2 = " Aplicación de Normas NFPA 72, 13, 20 y 25";
+
+$lugarfecha = "Santiago, 2 y 3 de noviembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
 
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
