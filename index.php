@@ -526,14 +526,37 @@ else if ($curso ==  3929)
 $nombrediploma1 = "Sistemas de Protección Contra Incendio:";
 $nombrediploma2 = " Aplicación de Normas NFPA 72, 13, 20 y 25";
 
-$lugarfecha = "Santiago, 2 y 3 de noviembre de 2019";
+$lugarfecha = "Santiago, 2 y 3 de diciembre de 2019";
 
 $horas = "15 horas";
 $nombrerelator = "Juan Ramón Flores";
 $firmarelator = "Firma_Flores.png";
 
 }
+else if ($curso ==  3947)
+{
+$nombrediploma1 = "Reforma Laboral:";
+$nombrediploma2 = "Sindicatos y Negociación Colectiva";
 
+$lugarfecha = "Antofagasta, 9 y 10 de diciembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Ricardo Liendo";
+$firmarelator = "Firma_Liendo_0711.png";
+
+}
+else if ($curso ==  3948)
+{
+$nombrediploma1 = "Administración Integral de Contratos";
+$nombrediploma2 = "";
+
+$lugarfecha = "Santiago, 9 y 10 de diciembre de 2019";
+
+$horas = "15 horas";
+$nombrerelator = "Carlos Parra";
+$firmarelator = "Firma_Parra.png";
+
+}
 
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
