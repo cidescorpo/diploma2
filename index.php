@@ -558,6 +558,19 @@ $firmarelator = "Firma_Parra.png";
 
 }
 
+else if ($curso ==  3996)
+{
+$nombrediploma1 = "Investigación de incidentes / Accidentes";
+$nombrediploma2 = "con Base en el Método ICAM";
+
+$lugarfecha = "Tierra Amarilla, 6 de enero de 2020";
+
+$horas = "8 horas";
+$nombrerelator = "Juan Ramón Flores";
+$firmarelator = "Firma_Flores.png";
+
+}
+
 $diplomaPdf = new DiplomaPdf('L','mm','letter');
 $diplomaPdf->SetAutoPageBreak(false);
 $diplomaPdf->renderFirma($firmarelator,210,163,50);
